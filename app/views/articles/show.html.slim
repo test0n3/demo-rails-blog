@@ -1,0 +1,11 @@
+h1 Showing selected articles
+ul 
+  li = link_to 'Back', articles_path 
+  li = link_to 'Edit', edit_article_path(@article)
+
+p
+  | Title: 
+  = @article.title
+p 
+  | Description: 
+  = @article.description
