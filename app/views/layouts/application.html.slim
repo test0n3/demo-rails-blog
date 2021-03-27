@@ -1,0 +1,21 @@
+doctype html 
+html 
+  head 
+    title Demo Blog With Replies 
+    meta charset="UTF-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta content="width=device-width, initial-scale=1 shrink-to-fit=no" name="viewport"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-tracks": "reload"
+    = stylesheet_pack_tag "application", "data-turbolinks-track": "reload"
+    = javascript_pack_tag "application", "data-turbolinks-track": "reload"
+
+  body
+    = debug(params) if Rails.env.development?
+    = render 'layouts/navigation'
+    - flash.each do |name, msg|
+      ul
+        li = msg
+    = yield
