@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+source: https://deallen7.medium.com/ruby-on-rails-app-build-blog-3d9975a999ae#8afe
 
-Things you may want to cover:
+Not the same example available in Rails Guide.
 
-* Ruby version
+## Goals
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- use Tailwind CSS
+- use rails-slim
+- use simple-form
+- add replies to comments of an article
