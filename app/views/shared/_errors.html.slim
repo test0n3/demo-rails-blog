@@ -1,0 +1,8 @@
+- if obj.errors.any?
+  .border.border-red-900.rounded-lg.bg-red-200.p-8
+    h3.text-red-500 
+      = pluralize(obj.errors.count, "error")
+      |  prohibited this object from being saved:
+    ul.list-disc.pl-4 
+      - obj.errors.full_messages.each do |msg|
+        li.text-red-500 = msg 

@@ -1,5 +1,5 @@
-h1 Listing all articles 
-p = link_to 'Create new article', new_article_path
+h2.font-bold Listing all articles 
+p = link_to 'Create new article', new_article_path, class:'text-blue-600'
 
 table 
   tr 
@@ -10,28 +10,29 @@ table
     th {colspan='3'} Actions
   - @articles.each do |article|
     tr 
-      td 
-        = article.title 
-      td 
-        = article.description 
-      td 
+      td.px-4 
+        = link_to article.title, article_path(article), class:'text-blue-600' 
+      td.px-4 
+        = truncate(article.description, length: 100) 
+      td.px-4 
         small 
           | Created by: 
           = article.user.username if article.user
-      td 
-        ul 
-          li 
-            = time_ago_in_words(article&.created_at)
-            | ago.
-          li
-            | last updated: 
-            = time_ago_in_words(article&.updated_at)
-            | ago.
-      td 
-        = link_to 'Edit', edit_article_path(article)
-      td 
-        = link_to 'Show', article_path(article)
-      td 
+      td.px-4 
+        / ul 
+        /   li 
+        /     = time_ago_in_words(article&.created_at)
+        /     | ago.
+        /   li
+        /     | last updated: 
+        /     = time_ago_in_words(article&.updated_at)
+        /     | ago.
+      td.px-4 
+        = link_to 'Edit', edit_article_path(article), class: 'text-blue-600'
+      td.px-4 
+        = link_to 'Show', article_path(article), class: 'text-blue-600'
+      td.px-4 
         = link_to 'Delete', article_path(article), 
                             method: :delete, 
-                            data: { confirm: 'Are you sure?' }
+                            data: { confirm: 'Are you sure?' },
+                            class: 'text-blue-600'
