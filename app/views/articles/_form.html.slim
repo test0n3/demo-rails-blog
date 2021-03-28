@@ -1,15 +1,10 @@
-- if @article.errors.any?
-  h2 The following errors prevented the article from saving:
-  ul 
-    - @article.errors.full_messages.each do |msg|
-      li = msg 
-
+= render 'shared/errors', obj: @article
 = simple_form_for @article do |f|
   p 
-    = f.label :title
-    = f.text_field :title
+    = f.label :title, class: 'block'
+    = f.text_field :title, class: 'border'
   p 
-    = f.label :description
-    = f.text_area :description
+    = f.label :description, class: 'block'
+    = f.text_area :description, class: 'border'
   p 
     = f.submit

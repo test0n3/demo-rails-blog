@@ -15,7 +15,6 @@ html
   body
     = debug(params) if Rails.env.development?
     = render 'layouts/navigation'
-    - flash.each do |name, msg|
-      ul
-        li = msg
-    = yield
+    .container.pt-1.px-4.border
+      = render 'shared/messages'
+      = yield

@@ -1,6 +1,6 @@
-nav
-  .container
-    h1 ALPHA BLOG
+nav.bg-gray-500
+  .container.flex.flex-row
+    h1.font-bold ALPHA BLOG
     ul.m-0.p-0.flex.flex-row 
-      li = link_to 'Article', articles_path
-      li = link_to 'Create Article', new_article_path
+      li.mx-4 = link_to 'Articles', articles_path, class:'text-gray-50'
+      li.mx-4 = link_to 'Create Article', new_article_path, class:'text-gray-50'
