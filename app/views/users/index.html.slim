@@ -1,0 +1,11 @@
+h2.font-bold All users 
+
+- @users.each do |user|
+  ul.flex.flex-row 
+    li.mx-4
+      = link_to gravatar_for(user), user_path(user)
+    li.mx-4 
+      = link_to user.username, user_path(user)
+    li.mx-4 
+      small 
+        = pluralize(user.articles.count, 'article') if user.articles

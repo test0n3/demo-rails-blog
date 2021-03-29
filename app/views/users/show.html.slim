@@ -1,0 +1,10 @@
+h2.font-bold
+  = "Welcome to #{@user.username}'s page"
+
+.icon 
+  = gravatar_for @user
+
+h3.font-bold
+  = @user.username
+  | 's articles
+= render 'shared/article', obj: @user.articles

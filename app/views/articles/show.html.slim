@@ -2,6 +2,17 @@ h2.font-bold Showing selected articles
 p
   span.font-bold Title: 
   = @article.title
+
+- if @article.user
+  ul.flex.flex-row 
+    li.mx-4 
+      = link_to gravatar_for(@article.user), user_path(@article.user)
+    li.mx-4 
+      = link_to @article.user.username, user_path(@article.user)
+    li.mx-4 
+      small 
+        = pluralize(@article.user.articles.count, 'article') if @article.user.articles
+
 p 
   span.font-bold Description: 
   = simple_format(@article.description)
