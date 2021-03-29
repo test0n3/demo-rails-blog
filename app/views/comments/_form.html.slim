@@ -1,0 +1,9 @@
+= simple_form_for [@article, @article.comments.build] do |f|
+  p 
+    = f.label :name, class: 'block'
+    = f.text_field :name, class: 'border'
+  p 
+    = f.label :comment, class: 'block'
+    = f.text_area :comment, class: 'border'
+  p 
+    = f.submit

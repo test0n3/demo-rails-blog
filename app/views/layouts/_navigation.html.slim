@@ -5,7 +5,7 @@ nav.bg-gray-500
       li.mx-4 = link_to 'Articles', articles_path, class:'text-gray-50'
       li.mx-4 = link_to 'Create Article', new_article_path, class:'text-gray-50'
       li.mx-4 = link_to 'Sign Up', signup_path, class:'text-gray-50'
+      - if !logged_in?
+        li.mx-4 = link_to 'Log In', login_path, class:'text-gray-50'
       - if logged_in?
         li.mx-4 = link_to 'Log Out', logout_path, method: :delete, class:'text-gray-50'
-      - else
-        li.mx-4 = link_to 'Log In', login_path, class:'text-gray-50'
