@@ -9,3 +9,4 @@ h2.font-bold All users
     li.mx-4 
       small 
         = pluralize(user.articles.count, 'article') if user.articles
+= paginate @users
