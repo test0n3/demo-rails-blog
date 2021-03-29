@@ -1,0 +1,15 @@
+= render 'shared/errors', obj: @user
+
+= simple_form_for @user, html: { role: 'form' } do |f|
+  p
+    = f.label :username, class: 'block'
+    = f.text_field :username, placeholder: 'Enter username', class: 'border'
+  p
+    = f.label :email, class: 'block'
+    = f.email_field :email, placeholder: 'Enter email', class: 'border'
+  p
+    = f.label :password, class: 'block'
+    = f.password_field :password, placeholder: 'Enter password', class: 'border'
+  p
+    = f.submit(@user.new_record? ? 'Sign up' : 'Update account')
+
