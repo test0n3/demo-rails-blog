@@ -1,7 +1,7 @@
 h2.font-bold Listing all articles 
 p = link_to 'Create new article', new_article_path, class:'text-blue-600'
 
-table 
+table.w-2/3.m-auto 
   tr 
     th Title 
     th Description
@@ -17,16 +17,17 @@ table
       td.px-4 
         small 
           | Created by: 
-          = article.user.username if article.user
+          = article&.user.username
       td.px-4 
-        / ul 
-        /   li 
-        /     = time_ago_in_words(article&.created_at)
-        /     | ago.
-        /   li
-        /     | last updated: 
-        /     = time_ago_in_words(article&.updated_at)
-        /     | ago.
+        ul 
+          li 
+            span.font-bold> created:
+            = time_ago_in_words(article&.created_at)
+            |  ago.
+          li
+            span.font-bold> last updated: 
+            = time_ago_in_words(article&.updated_at)
+            |  ago.
       td.px-4 
         = link_to 'Edit', edit_article_path(article), class: 'text-blue-600'
       td.px-4 
